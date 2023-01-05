@@ -16,7 +16,13 @@ postt:Post[]=[]
       console.log('Data come From api (Get)' + result)
       this.postt=result;
     })
-
+  }
+    
+  deletePost(id){
+    this.post.delete(id).subscribe(res => {
+         this.postt = this.postt.filter(item => item.id !== id);
+         console.log('Post deleted successfully!');
+    })
   }
 
 }
