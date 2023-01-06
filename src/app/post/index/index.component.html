@@ -1,11 +1,11 @@
-<p>index works!</p>
+
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-10 rounded shadow">
     <h1>Angular CRUD </h1>
   
-    <a href="#" routerLink="/post/create/" class="btn btn-success">Create New Post</a>
+    <a href="#" routerLink="/post/create/" class="btn btn-success">CREATE POST</a>
     
     <table class="table">
       <tr>
@@ -19,9 +19,9 @@
         <td>{{ post.title }}</td>
         <td>{{ post.body }}</td>
         <td>
-          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
-          <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-info">Edit</a>
-          <button type="button" (click)="deletePost(post.id)" class="btn btn-info">Delete</button>
+          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">VIEW</a>
+          <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-info">EDIT</a>
+          <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">DELETE</button>
         </td>
       </tr>
     </table>
