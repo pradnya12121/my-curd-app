@@ -1,0 +1,70 @@
+
+<p>rectiv-form works!</p>
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+                <div class="form-group">
+                    <label for="firstname">Firstname</label>
+                    <input type="text" id="firstname" name="firstname"  #firstname="ngModel" class="form-control"  required  [(ngModel)]="firstname.firstname">
+                    <small *ngIf="firstname.invalid && firstname.touched">Please enter Firstname</small>
+                    <small *ngIf="firstname.firstname?.length>6">firstname only six character</small>
+                </div>
+                   <div class="form-group">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" id="lastname" name="lastname" required  #lastname="ngModel" class="form-control" [(ngModel)]="lastname.lastname">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"  required  #email="ngModel" class="form-control" [(ngModel)]="email.email"> 
+
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="number" id="phone" name="phone"  required #phone="ngModel" class="form-control" [(ngModel)]="phone.phone">
+
+                    </div>
+                    <div class="form-group">
+
+                        <div *ngFor="let d of genders" class="custom-control custom-radio">
+                            <input type="radio" id="{{d.id}}" name="gender" value="{{d.value}}" [(ngModel)]="defaultValue2">
+                            <label for="{{d.id}}" class="custom-control custom-label">{{d.value}}</label>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <select class="form-control" id="course" name="course" [(ngModel)]="defaultValue">
+                         <option value="Angular">Angular</option>
+                         <option value="Java">Java</option>
+                         <option value="TypeScript">TypeScript</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required #password="ngModel" [(ngModel)]="password.password"> 
+
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">ConfirmPassword</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required #confirmPassword="ngModel" [(ngModel)]="confirmPassword.confirmPassword">  
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div *ngIf="isShow">
+                        {{userInfo.firstname}}
+                        {{userInfo.lastname}}
+                        {{userInfo.email}}
+                        {{userInfo.phone}}
+                        {{userInfo.gender}}
+                        {{userInfo.course}}
+                        {{userInfo.password}}
+                        {{userInfo.confirmPassword}}
+
+                    </div>
+            </form>
+            
+
+        </div>
+    </div>
+</div>

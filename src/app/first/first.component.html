@@ -1,0 +1,29 @@
+<p>first works!</p>
+<!-- <p>second works!</p>
+
+Product ID:<input type="number" #pid>
+Product Name:<input type="text" #pname>
+Product Price:<input tyep="number" #pprice>
+<button type="submit" (click)="sendData(pid.value,pname.value,pprice.value)">Send Data</button> --> -->
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let k of data_two ; index as i">
+            
+            <td>{{k.pid}}</td>
+            <td>{{k.pname}}</td>
+            <td>{{k.pprice}}</td>
+
+
+        </tr>
+    </tbody>
+    
+</table>

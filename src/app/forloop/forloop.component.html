@@ -1,0 +1,15 @@
+<p>forloop works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Stu ID</th>
+            <th>Stu Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of student">
+            <td>{{d.sid}}</td>
+            <td>{{d.sname}}</td>
+        </tr>
+    </tbody>
+</table>
